@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Pending</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3ee;
+      color: #1f1c19;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 40px 24px;
+      box-sizing: border-box;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #7a746d;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      margin: 10px 0 0 0;
+      font-weight: normal;
+    }
+
+    p, li {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #3f3933;
+    }
+
+    .intro {
+      margin-top: 18px;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #ddd5cc;
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .card.alt {
+      background: #efe8de;
+      box-shadow: none;
+    }
+
+    .card.dark {
+      background: #1f1c19;
+      color: #f5efe8;
+      border-color: #1f1c19;
+    }
+
+    .card.dark p,
+    .card.dark .eyebrow,
+    .card.dark li {
+      color: #f0e8df;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 16px 0 0 0;
+    }
+
+    footer {
+      border-top: 1px solid #ddd5cc;
+      padding-top: 22px;
+      margin-top: 28px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #7a746d;
+    }
+
+    .delayed {
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .delayed.visible {
+      opacity: 1;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #b9aea0;
+      background: transparent;
+      color: #3f3933;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .small {
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="eyebrow">ARH 290 Final Project</div>
+    <h1>Access Pending</h1>
+    <p class="intro">
+      A mobile site accessed through QR codes embedded in collage. This site asks how the symbol of the QR code has already shaped your movement, expectation, and understanding of the space it occupies.
+    </p>
+
+    <section class="card">
+      <div class="eyebrow">Prompt 01</div>
+      <h2>Before anything loaded</h2>
+      <p>You already performed the code.</p>
+      <p>You paused. You reached for your phone. You lifted your arm. You oriented your body toward the surface. You expected entry.</p>
+      <p>What did the QR code ask your body to do before it gave you anything in return?</p>
+    </section>
+
+    <section class="card alt">
+      <div class="eyebrow">Prompt 02</div>
+      <h2>The space around the code</h2>
+      <p>Did the code make this surface feel interactive?</p>
+      <p>Did it turn a wall, fragment, collage, or corner into an interface?</p>
+      <p>Did it make you see this place as a point of access rather than an object to look at?</p>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">Prompt 03</div>
+      <h2>Expectation</h2>
+      <p>A QR code promises speed.</p>
+      <p>It suggests that information is immediate, that access is frictionless, that the object in front of you is incomplete unless it opens into something else.</p>
+      <p>When that promise fails, what changes: your understanding of the code, your relationship to the object, or your awareness of yourself in space?</p>
+    </section>
+
+    <section class="card dark">
+      <div class="eyebrow">Prompt 04</div>
+      <h2>Delay</h2>
+      <p>This symbol is meant to collapse time.</p>
+      <p>Scan. Open. Move on.</p>
+      <p>But what happens when scanning becomes slow, uncertain, awkward, or unsuccessful? What kind of attention emerges when access is interrupted?</p>
+      <button class="button" onclick="revealText()">Wait for response</button>
+      <p id="hiddenText" class="delayed small">The delay is part of the work. The pause between scan and access makes you notice your own expectation, and the space around you, more acutely.</p>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">Prompt 05</div>
+      <h2>Human error</h2>
+      <p>A machine reads pattern.</p>
+      <p>A person notices texture, damage, layering, hesitation, labor, and choice.</p>
+      <p>If the code is embedded in collage, what do you read first: the system or the surface?</p>
+    </section>
+
+    <section class="card alt">
+      <div class="eyebrow">Prompt 06</div>
+      <h2>Reflection</h2>
+      <ul>
+        <li>What did you expect this code to give you?</li>
+        <li>How did it change the way you approached this object?</li>
+        <li>Did it make the collage feel more usable, more contemporary, more official, or less visible as art?</li>
+        <li>Did you look at the work, or did you try to get through it?</li>
+      </ul>
+    </section>
+
+    <footer>
+      Inspired by Roopa Vasudevan’s <em>Slow Response</em> (2021–present), this project considers the QR code as both image and instruction: a symbol that organizes movement, expectation, and the experience of space.
+    </footer>
+  </main>
+
+  <script>
+    function revealText() {
+      const text = document.getElementById('hiddenText');
+      setTimeout(() => {
+        text.classList.add('visible');
+      }, 2200);
+    }
+  </script>
+</body>
+</html>
