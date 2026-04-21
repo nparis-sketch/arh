@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Pending</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3ee;
+      color: #1f1c19;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 40px 24px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #ddd5cc;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #7a746d;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.1;
+      margin: 0 0 18px 0;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1.5;
+      color: #3f3933;
+      margin: 0;
+    }
+
+    .small {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid #b9aea0;
+      background: transparent;
+      color: #3f3933;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="panel" id="step1">
+      <div class="eyebrow">Prompt 1</div>
+      <p>What did this code physically prompt you to do?</p>
+      <p class="small" style="margin-top: 14px;">Did you reach for your phone? Lift your arm?</p>
+      <button class="button" onclick="nextStep(1, 2)">Tap to continue</button>
+    </section>
+
+    <section class="panel hidden" id="step2">
+      <div class="eyebrow">Prompt 2</div>
+      <p>Did you look at the collage first, or try to get through it?</p>
+      <button class="button" onclick="nextStep(2, 3)">Tap to continue</button>
+    </section>
+
+    <section class="panel hidden" id="step3">
+      <div class="eyebrow">Prompt 3</div>
+      <p>How did the QR code change how you navigated through Hillyer?</p>
+      <button class="button" onclick="nextStep(3, 4)">Tap to continue</button>
+    </section>
+
+    <section class="panel hidden" id="step4">
+      <div class="eyebrow">Prompt 4</div>
+      <p>What did you expect to receive?</p>
+      <button class="button" onclick="nextStep(4, 5)">Tap to continue</button>
+    </section>
+
+    <section class="panel hidden" id="step5">
+      <div class="eyebrow">Prompt 5</div>
+      <p>When did you learn what this symbol means?</p>
+      <button class="button" onclick="nextStep(5, 6)">Tap to continue</button>
+    </section>
+
+    <section class="panel hidden" id="step6">
+      <div class="eyebrow">Project Info</div>
+      <h1>Access Pending</h1>
+      <p class="small">
+        This project uses QR codes in collage to question how symbols of access shape movement, expectation, and the experience of space.
+      </p>
+      <p class="small" style="margin-top: 14px;">
+        Inspired by Roopa Vasudevan’s <em>Slow Response</em> (2021–present).
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function nextStep(current, next) {
+      document.getElementById('step' + current).classList.add('hidden');
+      document.getElementById('step' + next).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
